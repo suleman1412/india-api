@@ -24,7 +24,7 @@ class TestIndiaDBClient:
 
         assert len(result) == 110
         for record in result:
-            assert isinstance(record, PredictedPower)
+            assert isinstance(int(record), PredictedPower)
 
     def test_get_predicted_solar_power_production_for_location(self, client, forecast_values) -> None:
         locID = "testID"

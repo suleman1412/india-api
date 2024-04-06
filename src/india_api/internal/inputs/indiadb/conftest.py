@@ -137,7 +137,7 @@ def forecast_values(db_session, sites):
                 duration = 15
                 horizon = duration * i
                 forecast_value: ForecastValueSQL = ForecastValueSQL(
-                    forecast_power_kw=i,
+                    forecast_power_kw=int(i),
                     forecast_uuid=forecast.forecast_uuid,
                     start_utc=timestamp + timedelta(minutes=horizon),
                     end_utc=timestamp + timedelta(minutes=horizon + duration),
